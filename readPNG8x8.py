@@ -1,4 +1,6 @@
 import unicornhat as unicorn
+
+# sudo pip install pillow
 from PIL import Image
 
 # Load the image
@@ -15,15 +17,14 @@ width, height = unicorn.get_shape()
 # Clear the Unicorn HAT
 unicorn.clear()
 
+image=image.convert("RGB")
+
 # Loop through each pixel in the image
 for x in range(width):
     for y in range(height):
         # Get the RGB values of the pixel
         r, g, b = image.getpixel((x, y))
-        # Map the RGB values to the range of 0-255
-        r = int(r / 255.0 * 63)
-        g = int(g / 255.0 * 63)
-        b = int(b / 255.0 * 63)
+
         # Set the pixel on the Unicorn HAT
         unicorn.set_pixel(x, y, r, g, b)
 
