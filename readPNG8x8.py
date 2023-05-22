@@ -1,7 +1,10 @@
-import unicornhat as unicorn
+from unicorn_hat_sim import unicornhat as unicorn
+#import unicornhat as unicorn
+import time
 
 # sudo pip install pillow
 from PIL import Image
+import time
 
 # Load the image
 image_path = 'image.png'
@@ -30,3 +33,5 @@ for x in range(width):
 
 # Show the image on the Unicorn HAT
 unicorn.show()
+time.sleep(5)
+unicorn.clear()
